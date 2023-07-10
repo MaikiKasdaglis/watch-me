@@ -1,10 +1,11 @@
 import React from 'react';
+import ShowCard from './ShowCard';
 
-function MyWatchList() {
+function MyWatchList({watchList, onShowClicked, onShowDelete}) {
 
     return(
         <div className="watch-list-container">
-            {/** Put your shows here... */}
+          {watchList.map((show) => <ShowCard key={show.id} show={show} onShowClicked={onShowClicked} onShowDelete={onShowDelete}/>)}
         </div>
     )
 }
